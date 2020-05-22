@@ -1,0 +1,552 @@
+Build Tools
+-----------
+-> To download jars
+
+-> To keep jars in classpath of project
+
+-> To compile source code
+
+-> To execute unit test scripts
+
+-> To package our project to jar or war file
+
+Ex : Maven or Gradle
+
+Version Control Tools
+---------------------
+-> For Code Integration/Colloboration
+
+-> To track changes happend to source code (who, when, why and what)
+
+Ex : CVS, Clear Case, SVN, GIT hub and BitBucket etc...
+
+Unit testing tools
+-------------------
+-> Unit testing is a process of testing individual components of our code
+
+-> To perform unit testing we will use JUNIT Framework
+
+-> As part of Unit testing we will use Mocking
+
+-> The process of creating substitute object for real object is called as Mocking
+
+-> There are several mock frameworks available like EasyMock, PowerMock, Mockito etc..
+
+-> As part of Unit testing we need to perform code coverage also
+
+-> To generate code coverage report we are going to use Jacocco
+
+	Ex : Junit , Mocking and Jacocco
+
+
+Logging tools
+-------------
+-> Logging is one of the important aspect as part of application development
+
+-> Using logging we can trace we can behaviour in run time
+
+-> Using logging we can trace root of cause exception occuring in application
+
+	Ex: Log4J, Logback and SLF4J
+
+Log Monitoring Tools
+--------------------
+-> These tools are used for analyzing log messages
+
+	Ex: Putty, WinScp and Splunk (Recommended)
+
+Performance Testing tools
+--------------------------
+-> To understand application speed, stability and scalability
+
+	Ex: JMETER and HP Load Runner
+
+Deployment Tools
+----------------
+-> To perform automation build and deployment we are going to use CI & CD tools
+
+	Ex: Jenkins, uDeploy etc...
+
+Containerization Tool
+---------------------
+-> To application deployment easy in several envs
+
+	Ex: Docker
+
+Code Review Tools
+-----------------
+-> The process of analyzing source code is called as Code Review
+
+-> Code Review helps us in identifying flaws in our code
+
+	Ex : PMD and SonarQube
+
+
+Memory Analyzer Tool
+----------------------
+-> When application is running we have to monitor jvm memory
+
+	Ex : MAT
+
+Bug Reporting Tools
+-------------------
+-> These tools are used to raise bugs identified in testing phase
+
+-> Now a days for task assignment also we are using reporting tools
+
+	Ex: BugZilla and Zira
+
+Reporting Tools
+---------------
+-> For excel reports we will use Apache POI API or Aspose API
+
+-> For PDF reports we will use iText api
+
+
+Message Queues
+--------------
+-> For streaming data from multiple sources we will use Message Queues or Message Brokers
+
+	Ex: Active MQ, Rabbit MQ and Apache Kafka
+
+
+Mail api and twillo api
+-----------------------
+-> To send emails from our application we will use Java Mail API
+
+-> To send messages to mobile we will use Twillo api
+
+
+
+
+
+
+Version Control Tool
+--------------------
+
+-> In Project development several team members will be available
+
+-> Each developer will be developing some components in project
+
+-> All the developers may not be available in same office/location
+
+Q-1) How to integrate all the developers code ?
+Q-2) How to track changes happening to source code?
+
+For the above two problems, Version Control Tool is the solution
+
+-> Version Control Tool provides Storage capacity to store our project source code
+
+-> Version Control Tool provides Monitored access (who/when/why/what)
+
+
+There are several version control tools are available in the market
+-------------------------------------------------------------------
+-> SVN (Subversion)
+
+-> GIT HUB 
+
+-> Bit Bucket etc...
+
+
+SVN
+---
+-> SVN stands for Subversion
+
+-> SVN is an opensource software
+
+-> SVN is a version control software
+
+-> SVN follows Centralized Architecture
+
+SVN Architecture
+-----------------
+-> SVN Server
+
+-> SVN Client
+
+-> SVN Server will be installed in one Remote Computer
+
+-> SVN Server setup will be taken care by Administrators
+
+-> Adminstrator will create user accounts to proivde access permissions
+
+-> Administrator will create repositories for projects in SVN
+
+Note: For every project one repository will be available
+
+-> SVN Client software will be installed in every team member machine
+
+Note: We can install SVN Client Software in our machine
+
+-> SVN Client Software is used to communicate with SVN Server
+
+
+SVN Installation
+----------------
+SVN Server (Visual SVN Server)
+
+SVN Client (Tortoise SVN/Subclipse Plugin)
+
+
+Workflow in Realtime
+--------------------
+-> Project Manager will send request to SVN Admin to create Repository for Project
+
+Note: Repository is a location in SVN Server where we will store project related source code.
+
+-> Project Manager will send team details to SVN Admin to create individual accounts for Repository access
+
+-> SVN Admin will create individual accounts for all team members and will share account details like uname and pwd to each team member personally along with Repo URL.
+
+Note : SVN credentials are very confidential
+
+-> If we are new to team, then we should send request to SVN admin to provide access for Project Repository (with Manager approval)
+
+-> Once we got access for Project Repository, Install SVN Client software in our machine then proceed with svn operations.
+
+-> We should setup workspace in our local machine (We should be able to run applicaiton in local)
+
+
+SVN Admin Activities
+--------------------
+1) Create Repository for project
+
+2) Create User Accounts
+
+3) Provide Access Permissions for repository
+
+	SBI Repo URL : https://DESKTOP-OLT40PU/svn/SBI_REPO
+
+4) Admin will share repo url with team members along with account details
+
+
+
+
+
+Team Member Activities
+----------------------
+-> Get access for SVN repo
+
+-> Install SVN client
+
+-> Checkout project source code
+
+-> Setup workspace
+
+
+SVN Terminology
+---------------
+1) Repository : Location where we will store our files
+
+2) Repo URL : For every repository URL will be available
+
+3) Checkout : Taking files/code from repository to our machine for first time
+
+4) Add : New files we created in machine should be added (making eligible for commit)
+
+5) Commit/Check-in : Pushing files from local machine to repository
+
+6) Verion ID/Revision ID : For every commit version-id will be generated 
+
+7) Diff : Comparing working copy with working base
+
+8) Update : Taking latest changes from repository to local system
+
+Note: When we want to commit existing files to repository, alway we have to compare our local file with repository file and take update if required then only commit.
+
+
+What is conflict and when we will face Conflicts?
+-------------------------------------------------
+When we take update of a file there is a chance of getting Conflict.
+
+If working base and working copy having changes in same line then update operation will give Conflict.
+
+When Conflict occured, temp files will be created and junk characters will be added to our file.
+
+Manually we need to delete temp file and junk characters then we have to commit.
+
+
+Show Logs
+---------
+To see commits history we will use show logs option.
+
+
+Revert
+------
+Reverting changes from current revision to previous revision
+
+Usercase: We are working on Bug fix (Bug-120) and made few changes in code and committed
+those changes. After our commit TL told that bug is invalid please remove your changes.
+
+Lock
+----
+When mutliple team members are working there is a chance two developers will try to commit the same file at the same time.
+
+First i will lock the file --> Then i will proceed with my commit
+
+Note: When i acquired lock on a file, until i release the lock you can't commit that file
+
+
+Delete
+------
+To delete a file from repository we have to follow below process
+
+1) Delete file from local 
+
+2) Commit change to repository
+
+
+
+
+
+
+
+
+
+
+
+Checkout
+Add
+Commit
+Update
+Show Log
+Revert
+Lock
+Delete
+Diff 
+
+Branches
+--------
+
+In Project, developers will be divided into multiple team
+
+1) On going development team (new requirements development)
+
+2) Bug fix team (on going dev bug fixes)
+
+3) M & O team (Production issues fix)
+
+
+For every team seperate code base will be maintained in the SVN
+
+	trunk (ongoing development)
+	branches (SIT & UAT env code)
+	tags (Production code)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Repository
+-----------
+trunk
+sit_branch
+uat_branch
+tags
+
+M & O Team ---> Code Base ---> Tags
+
+
+
+
+We can perform SVN operations from IDE directley
+
+To work with SVN in IDE we have to install Subclipse Plugin in our IDE
+
+
+
+
+
+
+
+Drawbacks of SVN
+----------------
+1) It is centralized
+
+2) Internet connection mandatory for client to communicate with server
+
+3) We don't have user interface to communicate with server
+
+
+GIT HUB
+========
+GIT Hub is a cloud platform where we can create Repositories for project
+
+GIT Hub is maintaining by Microsoft
+
+GIT Hub uses Git as a version control software
+
+To Access GIT HUB, they provided one web application for us (User Interface)
+
+GIT HUB found in the year of 2008
+
+Microsoft purchased This GIT HUB for $7.5 billion in 2018
+
+GIT HUB developed in Ruby
+
+			URL : www.github.com
+
+GIT is distributed
+
+GIT Hub Repo URL : https://github.com/TEK-Leads/IRCTC.git
+
+In our machine we should install only Git Client
+
+We can use Git client in below 3 ways
+------------------------------------
+1) GIT GUI
+2) GIT Bash
+3) From IDE (no seperate installation)
+
+Note: In every IDE we will have Git client plugin (no need of installing)
+
+Git Terminilogy
+----------------
+1) Git Account : We should  creation one account in github.com
+
+Note: In realtime f or every team member git account will be created by admin and he will share credentials seperatley.
+
+2) Git Repository : For every project one repository will be created.
+
+Note: In realtime for creating Git repository we should send an email to admin with project details (Manager approval is required). After manager approval admin will create repository and will share git repo url.
+
+GIT Bash Commands
+-----------------
+-> It is command based client software
+
+-> In Git bash we have to execute commands to communicate with GITHUB Repo
+
+
+
+
+Commands
+--------
+git help --> to get frequently used git commands
+
+git help <cmd-name> : To open documentation of that command
+
+git init : To initialize our floder as git folder (syncing)
+
+git add <file-name> : To add files to index
+
+git commit -m 'msg' : To commit changes to local repo
+
+git push : To push changes from local to remote repository
+
+
+git init : To initialize folder as a git folder
+
+git add <file-name> : To add a file to staging area
+
+Note : The Files which are added to staging area those files are eligible for commit
+
+git commit -m 'msg' : To commit files which are in staging area to local repo
+
+git remote add <repo-url> : To add files to remote repository 
+
+Note: For first time only we should execute this remore add command
+
+git push -u origin master : It is used to commit changes from local to remote repo
+
+
+git status : To see staged, un-staged & un-tracked files
+
+	
+	Staged : Files are ready to commit
+
+	Un-Staged : Files are not ready to commit
+
+	Un-Tracked : Newly Created files
+
+
+git reset : It is used to un-stage a file
+
+	syntax : git reset HEAD <file-name>
+
+
+git checkout : It is used to discard changes in working directory
+
+	syntax : git checkout -- <File-Name>
+
+
+git log : To display commits history
+
+
+Note: For every commit commit-id will be generated. Commit id contains 40 alpha numeric characters. Out of those first 7 characters will be displayed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
